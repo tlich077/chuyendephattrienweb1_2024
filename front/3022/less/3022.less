@@ -1,0 +1,135 @@
+@font-size: 16px;
+@font-size-small: 14px;
+@color-primary: #43c3ea; 
+@color-secondary: #3d3d3d; 
+@color-gray: #999999;
+@color-overlay: rgba(67, 195, 234, 0.9);
+@color-hover-icon: #43c3ea; 
+@border-color: #f4f4f4; 
+@padding: 17px 19px 12px; 
+@margin: 14px 0; 
+@img-height: 150px; 
+@overlay-bg-color: rgba(0, 0, 0, 0.6);
+@img-transition-time: 0.7s; 
+@overlay-transition-time: 0.7s; 
+@img-max-width: 100%;
+@box-max-width: 1170px; 
+@font-weight-big: 700;
+@font-weight-small: 400; 
+@transition-time: 0.5s; 
+@line-height-p: 26px;
+@line-height-icon: 48px; 
+@border-radius: 3%;
+@icon-color: #fff; 
+@icon-font-size: 20px; 
+@icon-height: 45px;
+@icon-width: 45px; 
+@overlay-display: flex; 
+@overlay-justify-content: center; 
+@overlay-align-items: center;
+@box-position: relative; 
+@box-overflow: hidden; 
+@overlay-position: absolute; 
+@overlay-top: 0;
+@overlay-left: 0; 
+@overlay-width: 100%;
+@overlay-height: 100%; 
+@margin-top: 35px;
+.type-3022{
+    .box {
+        border: 1px solid @border-color;
+        text-align: center;
+        position: @box-position;
+        padding: @padding;
+        overflow: @box-overflow;
+        margin-top: @margin-top;
+    
+        .img-box {
+            position: relative;
+            overflow: hidden;
+            width: @img-max-width;
+            height: @img-height;
+            transition: transform @img-transition-time ease;
+    
+            img {
+                width: @img-max-width;
+                height: 100%;
+                transition: transform @img-transition-time ease;
+            }
+        }
+    
+        .overlay {
+            position: @overlay-position; 
+            top: @overlay-top; 
+            left: @overlay-left; 
+            width: @overlay-width; 
+            height: @overlay-height; 
+            background-color: @color-overlay; 
+            display: @overlay-display; 
+            justify-content: @overlay-justify-content; 
+            align-items: @overlay-align-items; 
+            transition: opacity @overlay-transition-time ease, transform @transition-time ease;
+            transform: scale(0); 
+    
+            .icon {
+                background: @overlay-bg-color; 
+                border-radius: @border-radius; 
+                color: @icon-color; 
+                font-size: @icon-font-size; 
+                height: @icon-height; 
+                line-height: @line-height-icon; 
+                width: @icon-width;
+                transition: color @transition-time ease;
+    
+                
+                &:hover {
+                    color: @color-hover-icon;
+                }
+            }
+        }
+    
+       
+        &:hover .overlay {
+            opacity: 1;
+            transform: scale(1); 
+        }
+    
+       
+        &:hover .title-link .title {
+            color: @color-primary;
+        }
+        &:hover img {
+          transform: scale(1.1);
+      }
+        .content {
+            margin: @margin;
+            font-size: @font-size-small; 
+            line-height: @line-height-p; 
+            font-weight: @font-weight-small; 
+            color: @color-gray; 
+        }
+    
+        .title-link {
+            text-decoration: none;
+            color: @color-secondary;
+    
+            &:hover {
+                color: @color-primary; 
+            }
+    
+            .title {
+                margin-bottom: 16px;
+                font-size: @font-size; 
+                font-weight: @font-weight-big;
+                transition: color @transition-time ease; 
+            }
+        }
+    }
+    
+}
+
+@media (min-width: 1200px) {
+    .type-3022 .container-custom {
+        max-width: @box-max-width !important;  
+    }
+}
