@@ -1,0 +1,115 @@
+@font-family: 'Open Sans', sans-serif;
+@background-color: #fff;
+@heading-bg-color: #22282e;
+@heading-color: #fff;
+@heading-font-size: 15px;
+@list-padding: 0 0 0 10px;
+@font-size-small: 14px;
+@font-size-medium: 15px;
+@font-weight-normal: 400;
+@text-color: #333333;
+@text-active-color: #f2480c;
+@box-shadow: 0px 1px 6px 0px #ebebeb;
+@padding-large: 20px;
+@padding-small: 5px 20px;
+@arrow-color: #ddd;
+@selection-bg-color: #f2480c;
+@selection-text-color: white;
+@text-transform: uppercase;
+@screen-max-width: 430px;
+
+body {
+    font-family: @font-family;
+    background: @background-color;
+}
+.type-3038{
+    .heading {
+        margin: 0;
+        font-size: @heading-font-size;
+        border-bottom: 0;
+        margin-top: 0;
+        padding-bottom: @padding-large;
+        margin-bottom: @padding-large;
+        background: @heading-bg-color;
+        color: @heading-color;
+        padding: @padding-small;
+        text-transform: @text-transform;
+    }
+    
+    .myList {
+        padding: @list-padding !important;
+        font-size: @font-size-small;
+        font-weight: @font-weight-normal !important;
+        color: @text-color;
+    }
+    
+    .custom-padding {
+        padding: 0 !important;
+    }
+    
+    .box {
+        padding: @padding-large !important;
+        position: relative;
+        box-shadow: @box-shadow;
+        background-color: @background-color;
+    }
+    
+    li {
+        list-style: none;
+        color: @text-color;
+        position: relative;
+    
+        i.fa-arrow-right {
+            margin-left: 10px;
+            color: @arrow-color;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    
+    .content2 {
+        padding-bottom: @padding-large;
+        color: @text-color;
+        font-size: @font-size-small;
+    }
+    
+    .active {
+        color: @text-active-color;
+    }
+    
+    ::selection {
+        background-color: @selection-bg-color;
+        color: @selection-text-color;
+    }
+    
+    @media only screen and (max-width: @screen-max-width) {
+        .box {
+            min-height: 0;
+            padding-bottom: 0 !important;
+        }
+    }
+    
+    #dataTable {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: @font-size-small;
+    }
+    
+    .table-cell {
+        padding: @padding-small;
+    
+        &:nth-child(1) {
+            width: 50%;
+        }
+    
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4) {
+            width: 15%;
+            vertical-align: middle;
+        }
+    }
+}
+
